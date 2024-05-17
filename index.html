@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apology Popup</title>
+    <style>
+        /* Styles for the popup */
+        .popup-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        .popup {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        /* Styles for the content */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Popup container -->
+
+    <h1 class="lol"></h1>
+    <div class="popup-container" >
+        <div class="popup">
+            <h2 id="popupText">plz jaan maf kori deona</h2>
+            <button onclick="closePopup()">yes i forgive you jaan</button>
+            <button onclick="changeText()">No</button>
+        </div>
+    </div>
+
+    <script>
+        // Array of apology messages
+        var messages = [
+            "I'm Sorry",
+            "ar jiboneo jen erum na hoy pura try korbo",
+            "ice cream khawabo jaw maf kori deo",
+            "tomare saira dite bolle jiboneo ok bolumna",
+            "immature idiot ami khoma kori deona jaan",
+            "tomare ami coding sikhamne expert howar por",
+            "kohono ami invalid reason a rak korbona jaan"
+        ];
+
+        // Index to keep track of current message
+        var currentIndex = 0;
+
+        // Function to change the text of the popup
+        function changeText() {
+            // Increment index or reset to 0 if at the end of the array
+            currentIndex = (currentIndex + 1) % messages.length;
+            // Change the text of the popup
+            document.getElementById("popupText").innerText = messages[currentIndex];
+        }
+        function closePopup() {
+            document.querySelector('.popup-container').style.display = 'none';
+            document.querySelector(".lol").innerHTML = 'thank u so much jaan' 
+        }
+    </script>
+</body>
+</html>
